@@ -36,7 +36,8 @@ mkdir /localhostdir
 cd /localhostdir
 sleep 1
 echo "Creation of the necessary files and allocation of permissions..."
-mkdir -m700 -p {entity,node}
+mkdir -m700 -p entity
+mkdir -m700 -p node
 sleep 1
 echo "Download the necessary resources..."
 wget https://github.com/oasisprotocol/mainnet-artifacts/releases/download/2020-10-01/genesis.json
