@@ -25,19 +25,15 @@ else
 fi
 sleep 1
 echo "Téléchargement des binaires nécessaires à la node Oasis..."
-cd temp/
+cd /tmp
 wget https://github.com/oasisprotocol/oasis-core/releases/download/v20.10/oasis_core_20.10_linux_amd64.tar.gz
 tar xzvf oasis_core_20.10_linux_amd64.tar.gz
 cd oasis_core_20.10_linux_amd64/
-cp oasis.zip /usr/local/bin
-cd /usr/local/bin
-unzip oasis.zip
-rm oasis.zip
+cp oasis-* /usr/local/bin
 sleep 1
 echo "Creating the localhostdir folder at the disk root..."
-cd /
-mkdir localhostdir
-cd localhostdir/
+mkdir /localhostdir
+cd /localhostdir
 sleep 1
 echo "Creation of the necessary files and allocation of permissions..."
 mkdir -m700 -p {entity,node}
@@ -47,8 +43,9 @@ wget https://github.com/oasisprotocol/mainnet-artifacts/releases/download/2020-1
 sleep 1
 echo "Setting up variables..."
 GENESIS_FILE_PATH=/localhostdir/genesis.json
+export GENESIS_FILE_PATH
 sleep 1
-echo "Configuration of localhost dir folder completed !"
+echo "Configuration of localhostdir folder completed !"
 sleep 1
 while [ -z $CHECKED ] || [ $CHECKED != 'YES' ]
 do
