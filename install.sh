@@ -64,8 +64,8 @@ sleep 1
 clear
 echo "Check that you are connected to your local network with a static local IP !"
 echo "Once you've verified, hit ENTER to continue..."
-read
-IP='hostname -I | cut -f1 -d'
+read a
+IP=`hostname -I | cut -f1 -d ''`
 echo "Your static local ip adress is $IP, please insert only the IPv4 !"
 read STATIC_IP
 sleep 1
