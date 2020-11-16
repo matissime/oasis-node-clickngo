@@ -64,11 +64,14 @@ sleep 1
 clear
 echo "Check that you are connected to your local network with a static local IP !"
 echo "Once you've verified, hit ENTER to continue..."
-read a
-STATIC_IP='hostname -I | cut -f1 -d' ''
-echo "Your static local ip adress is $STATIC_IP, please make sure there is no mistake !"
+read
+IP='hostname -I | cut -f1 -d'
+echo "Your static local ip adress is $IP, please insert only the IPv4 !"
+read STATIC_IP
 sleep 1
-echo "If the configuration of the two variables was successful type YES in capital letter, if the configuration failed type something else..."
+echo "Entity ID = $ENTITY_ID"
+echo "Local IPv4 = $STATIC_IP"
+echo "If the configuration of the two variables are correct type YES in capital letter, if the configuration failed type something else..."
 read CHECKED
 done
 clear
